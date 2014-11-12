@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>LinkedIn Connections</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/main.css">
+</head>
+<body>
+    <div class="container">
+    <div class="row text-center">
+        <h1>{{ Profile.firstName }} {{ Profile.lastName }}</h1>
+        <h2>{{ Profile.headline }}</h2>
+    </div>
+
+    <div class="row list-heading">
+        <p>Connections most likely to move to San Francisco</p>
+    </div>
+    {% set count = 1 %}
+    {% for connection in Connections %}
+        <div class="row list-item">
+        <div class="col-xs-1">
+            <p class="count">{{ count }}</p>
+        </div>
+        <div class="col-xs-5">
+            <div class="name">
+                <p>{{ connection[0]['firstName'] }} {{ connection[0]['lastName'] }}</p>
+            </div>
+            <div class="headline">
+                <p>{{ connection[0]['headline'] }}</p>
+            </div>
+            <div class="location">
+                <p>{{ connection[0]['location']['name'] }}</p>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            {% set location = connection[1][0] %}
+            {% set industry = connection[1][1] %}
+            {% if location: %}
+                {% if location == 'Bay Area' %}
+                    <p class="migration-params bay-area">{{ location }}</p>
+                {% elif location == 'United States' %}
+                    <p class="migration-params usa">{{ location }}</p>
+                {% else %}
+                    <p class="migration-params india-china">{{ location }}</p>
+                {% endif %}
+            {% endif %}
+            {% if industry: %}
+                {% if industry == 'Computer/IT' %}
+                    <p class="migration-params comp-it">{{ industry }}</p>
+                {% else %}
+                    <p class="migration-params recruiting">{{ industry }}</p>
+                {% endif %}
+            {% endif %}
+        </div>
+        <br>
+        </div>
+        {% set count = count + 1 %}
+    {% endfor %}
+    </div>
+
+</body>
+</html>

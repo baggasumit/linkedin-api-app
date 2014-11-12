@@ -1,0 +1,65 @@
+
+.list-item {
+    background-color: lightcyan;
+    padding: 10px;
+    margin: 10px;
+}
+
+.list-heading {
+    background-color: lightblue;
+    padding: 5px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.count {
+    font-size: 30px;
+}
+.migration-params {
+  background: #3498db;
+  border-radius: 28px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.bay-area {
+  width: 450px;
+}
+
+.usa {
+  width: 250px;
+}
+
+.india-china {
+  width: 150px;
+}
+
+.comp-it {
+  width: 250px;
+}
+
+.recruiting {
+  width: 150px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.name {
+    font-size: 20px;
+}
+
+.headline {
+    font-size: 12px;
+}
+
+.location {
+    font-size: 12px;
+}
