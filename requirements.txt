@@ -1,5 +1,5 @@
 Flask==0.10.1
 Flask-OAuth==0.12
-gunicorn==19.1.1
+gunicorn==19.5.0
 virtualenv==1.11.6
 virtualenvwrapper-powershell==12.7.8
